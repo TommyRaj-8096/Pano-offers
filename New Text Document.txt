@@ -1,0 +1,90 @@
+ <!-- Salary Structure Table BDSE-->
+<div class="flex flex-col items-center justify-center p-5 py-5 px-5 text-center gap-3">
+  <h2 class="text-2xl font-bold gap-5">Salary Structure</h2>
+  <table class="table-auto border-collapse border border-gray-800 bg-white p-2">
+    <thead>
+      <tr class="bg-gray-300">
+        <th class="border border-gray-800 px-4 py-4">Salary Components</th>
+        <th class="border border-gray-800 px-4 py-2">Annual (₹)</th>
+        <th class="border border-gray-800 px-4 py-2">Monthly (₹)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="border border-gray-800 px-4 py-2">Basic</td>
+        <td><input type="number" name="Basic_Annual" class="w-full px-2 py-1 border" placeholder="Annual Basic"></td>
+        <td><input type="number" name="Basic_Monthly" class="w-full px-2 py-1 border" placeholder="Monthly Basic"></td>
+      </tr>
+      <tr>
+        <td class="border border-gray-800 px-4 py-2">DA</td>
+        <td><input type="number" name="DA_Annual" class="w-full px-2 py-1 border" placeholder="Annual DA"></td>
+        <td><input type="number" name="DA_Monthly" class="w-full px-2 py-1 border" placeholder="Monthly DA"></td>
+      </tr>
+      <tr>
+        <td class="border border-gray-800 px-4 py-2">HRA</td>
+        <td><input type="number" name="HRA_Annual" class="w-full px-2 py-1 border" placeholder="Annual HRA"></td>
+        <td><input type="number" name="HRA_Monthly" class="w-full px-2 py-1 border" placeholder="Monthly HRA"></td>
+      </tr>
+      <tr>
+        <td class="border border-gray-800 px-4 py-2">Medical Allowance</td>
+        <td><input type="number" name="Medical_Annual" class="w-full px-2 py-1 border" placeholder="Annual Medical"></td>
+        <td><input type="number" name="Medical_Monthly" class="w-full px-2 py-1 border" placeholder="Monthly Medical"></td>
+      </tr>
+      <tr>
+        <td class="border border-gray-800 px-6 py-2">Conveyance Allowance</td>
+        <td><input type="number" name="Conveyance_Annual" class="w-full px-2 py-1 border" placeholder="Annual Conveyance"></td>
+        <td><input type="number" name="Conveyance_Monthly" class="w-full px-2 py-1 border" placeholder="Monthly Conveyance"></td>
+      </tr>
+      <tr>
+        <td class="border border-gray-800 px-4 py-2">Special Allowance</td>
+        <td><input type="number" name="SpecialAllowance_Annual" class="w-full px-2 py-1 border" placeholder="Annual Special Allowance"></td>
+        <td><input type="number" name="SpecialAllowance_Monthly" class="w-full px-2 py-1 border" placeholder="Monthly Special Allowance"></td>
+      </tr>
+      <tr class=bg-white font-semibold">
+        <td class="border border-gray-800 px-4 py-2">Gross Salary</td>
+        <td><input type="number" name="GrossSalary_Annual" class="w-full px-2 py-1 border" placeholder="Annual Gross Salary"></td>
+        <td><input type="number" name="GrossSalary_Monthly" class="w-full px-2 py-1 border" placeholder="Monthly Gross Salary"></td>
+      </tr>
+      <tr>
+        <td class="border border-gray-800 px-4 py-2">Employee PF</td>
+        <td><input type="number" name="EmployeePF_Annual" class="w-full px-2 py-1 border" placeholder="Annual Employee PF"></td>
+        <td><input type="number" name="EmployeePF_Monthly" class="w-full px-2 py-1 border" placeholder="Monthly Employee PF"></td>
+      </tr>
+      <tr>
+        <td class="border border-gray-800 px-4 py-2">Employee ESI</td>
+        <td><input type="number" name="Employee ESI_Annual" class="w-full px-2 py-1 border" placeholder="Annual Employee ESI"></td>
+        <td><input type="number" name="EmployeeESI_Monthly" class="w-full px-2 py-1 border" placeholder="Monthly Employee ESI"></td>
+      </tr>
+      <tr class="bg-white font-semibold">
+        <td class="border border-gray-800 px-4 py-2">Net Take Home</td>
+        <td><input type="number" name="NetTakeHome_Annual" class="w-full px-2 py-1 border" placeholder="Annual Net Take Home"></td>
+        <td><input type="number" name="NetTakeHome_Monthly" class="w-full px-2 py-1 border" placeholder="Monthly Net Take Home"></td>
+      </tr>
+      <tr>
+        <td class="border border-gray-800 px-4 py-2">Employer PF</td>
+        <td><input type="number" name="EmployerPF_Annual" class="w-full px-2 py-1 border" placeholder="Annual Employer PF"></td>
+        <td><input type="number" name="EmployerPF_Monthly" class="w-full px-2 py-1 border" placeholder="Monthly Employer PF"></td>
+      </tr>
+      <tr>
+        <td class="border border-gray-800 px-4 py-2">Employer ESI</td>
+        <td><input type="number" name="EmployerESI_Annual" class="w-full px-2 py-1 border" placeholder="Annual Employer ESI"></td>
+        <td><input type="number" name="EmployerESI_Monthly" class="w-full px-2 py-1 border" placeholder="Monthly Employer ESIn8n"></td>
+      </tr>
+      <tr>
+        <td class="border border-gray-800 px-4 py-2">Bonus</td>
+        <td><input type="number" name="Gratuity_Bonus" class="w-full px-2 py-1 border" placeholder="Annual Bonus"></td>
+        <td><input type="number" name="Bonus_Monthly" class="w-full px-2 py-1 border" placeholder="Monthly Bonus"></td>
+      </tr>
+      <tr>
+        <td class="border border-gray-800 px-4 py-2">Gratuity</td>
+        <td><input type="number" name="Gratuity_Annual" class="w-full px-2 py-1 border" placeholder="Annual Gratuity"></td>
+        <td><input type="number" name="Gratuity_Monthly" class="w-full px-2 py-1 border" placeholder="Monthly Gratuity"></td>
+      </tr>
+      <tr class="bg-white font-bold">
+        <td class="border border-gray-800 px-4 py-2">Cost to Company</td>
+        <td><input type="number" name="CTC_Annual" class="w-full px-2 py-1 border" placeholder="Annual CTC"></td>
+        <td><input type="number" name="CTC_Monthly" class="w-full px-2 py-1 border" placeholder="Monthly CTC"></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

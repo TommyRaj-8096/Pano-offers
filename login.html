@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link href="./output.css" rel="stylesheet" />
+  </head>
+  <body class="bg-blue-600 min-h-screen flex items-center justify-center px-4">
+    <div class="bg-white rounded-lg shadow-lg p-6 sm:p-10 w-full max-w-md">
+      <div class="flex justify-center mb-6">
+        <img src="Frame 4.jpg" alt="Logo" class="bg-white p-2 rounded-md" />
+      </div>
+
+      <form id="loginForm" class="space-y-5">
+        <div class="flex flex-col">
+          <label for="Employee_code" class="text-lg font-medium text-black mb-2"
+            >Employee ID</label
+          >
+          <input
+            type="text"
+            id="Employee_code"
+            placeholder="Enter your Employee ID"
+            class="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            required
+          />
+        </div>
+
+        <div class="flex flex-col">
+          <label for="MPIN" class="text-lg font-medium text-black mb-2"
+            >MPIN</label
+          >
+          <input
+            type="password"
+            id="MPIN"
+            placeholder="Enter your MPIN"
+            class="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            required
+          />
+        </div>
+
+        <div class="flex justify-center mt-4">
+          <button
+            type="submit"
+            class="bg-blue-600 hover:bg-blue-700 text-white w-full py-3 rounded-md font-bold transition"
+          >
+            Log In
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <script>
+      document
+        .getElementById("loginForm")
+        .addEventListener("submit", async function (e) {
+          e.preventDefault();
+
+          const empId = document.getElementById("Employee_code").value;
+          const mpin = document.getElementById("MPIN").value;
+
+          const scriptURL =
+            "https://script.google.com/macros/s/AKfycbyG413oJ1Z1mPXmgc3077dEnOG7V8PX4I9AzxA6mQveIXZi8nuCFaL1gRWp3SpRQ6Oq/exec";
+
+          try {
+            const response = await fetch(scriptURL, {
+              method: "POST",
+              body: new URLSearchParams({ empId, mpin }),
+            });
+
+            const result = await response.json();
+
+            if (result.success) {
+              localStorage.setItem("isLoggedIn", "true");
+              ("Login successful!");
+              window.location.href = "http://127.0.0.1:3000/index.html";
+            } else {
+              alert("Invalid Employee ID or MPIN.");
+            }
+          } catch (error) {
+            alert("Error connecting to server.");
+            console.error(error);
+          }
+        });
+    </script>
+  </body>
+</html>
