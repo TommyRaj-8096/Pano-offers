@@ -19,6 +19,7 @@
           <input
             type="text"
             id="Employee_code"
+            name="empId"
             placeholder="Enter your Employee ID"
             class="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
             required
@@ -31,6 +32,7 @@
           <input
             type="password"
             id="MPIN"
+            name="mpin"
             placeholder="Enter your MPIN"
             class="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
             required
@@ -49,37 +51,38 @@
     </div>
 
     <script>
-      document
-        .getElementById("loginForm")
-        .addEventListener("submit", async function (e) {
-          e.preventDefault();
+      document.getElementById("loginForm").addEventListener("submit", async function (e) {
+        e.preventDefault();
 
-          const empId = document.getElementById("Employee_code").value;
-          const mpin = document.getElementById("MPIN").value;
+        const empId = document.getElementById("Employee_code").value;
+        const mpin = document.getElementById("MPIN").value;
 
-          const scriptURL =
-            "https://script.google.com/macros/s/AKfycbyG413oJ1Z1mPXmgc3077dEnOG7V8PX4I9AzxA6mQveIXZi8nuCFaL1gRWp3SpRQ6Oq/exec";
+        const scriptURL =
+          "https://script.google.com/macros/s/AKfycbyG413oJ1Z1mPXmgc3077dEnOG7V8PX4I9AzxA6mQveIXZi8nuCFaL1gRWp3SpRQ6Oq/exec";
 
-          try {
-            const response = await fetch(scriptURL, {
-              method: "POST",
-              body: new URLSearchParams({ empId, mpin }),
-            });
+        try {
+          const response = await fetch(scriptURL, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/x-www-form-urlencoded"
+            },
+            body: new URLSearchParams({ empId, mpin })
+          });
 
-            const result = await response.json();
+          const result = await response.json();
 
-            if (result.success) {
-              localStorage.setItem("isLoggedIn", "true");
-              alert("Login successful!");
-              window.location.href = "https://tommyraj-8096.github.io/Pano-offers/index.html";
-            } else {
-              alert("Invalid Employee ID or MPIN.");
-            }
-          } catch (error) {
-            alert("Error connecting to server.");
-            console.error(error);
+          if (result.success) {
+            localStorage.setItem("isLoggedIn", "true");
+            alert("Login successful!");
+            window.location.href = "index.html"; // Relative path works well in GitHub Pages
+          } else {
+            alert("Invalid Employee ID or MPIN.");
           }
-        });
+        } catch (error) {
+          alert("Error connecting to server.");
+          console.error(error);
+        }
+      });
     </script>
   </body>
 </html>
