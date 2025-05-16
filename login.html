@@ -15,8 +15,7 @@
       <form id="loginForm" class="space-y-5">
         <div class="flex flex-col">
           <label for="Employee_code" class="text-lg font-medium text-black mb-2"
-            >Employee ID</label
-          >
+            >Employee ID</label>
           <input
             type="text"
             id="Employee_code"
@@ -28,8 +27,7 @@
 
         <div class="flex flex-col">
           <label for="MPIN" class="text-lg font-medium text-black mb-2"
-            >MPIN</label
-          >
+            >MPIN</label>
           <input
             type="password"
             id="MPIN"
@@ -72,8 +70,8 @@
 
             if (result.success) {
               localStorage.setItem("isLoggedIn", "true");
-              ("Login successful!");
-              window.location.href = "http://127.0.0.1:3000/index.html";
+              alert("Login successful!");
+              window.location.href = "https://tommyraj-8096.github.io/Pano-offers/index.html";
             } else {
               alert("Invalid Employee ID or MPIN.");
             }
