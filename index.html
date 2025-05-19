@@ -145,8 +145,34 @@
           <option value="BDHMCSV">BDHMCSV</option>
         </select>
       </div>
-      <!-- Salary Structure Table BDSE-->
-<
+       <!-- Salary Code Breakdown Table - Centered with White Table Only -->
+<div id="Table-Breakdown" class="flex flex-col items-center justify-center p-5 space-y-3">
+  <h2 class="text-xl font-bold text-center text-gray-800 p-5">Salary Structure Code Breakdown</h2>
+  <table class="table-auto border-collapse border border-gray-300 bg-white">
+    <thead class="bg-gray-200 text-gray-700">
+      <tr>
+        <th class="px-4 py-2 border">Letter</th>
+        <th class="px-4 py-2 border">Stands For</th>
+      </tr>
+    </thead>
+    <tbody class="text-gray-800">
+      <tr><td class="px-4 py-2 border font-semibold">B</td><td class="px-4 py-2 border">Basic</td></tr>
+      <tr><td class="px-4 py-2 border font-semibold">D</td><td class="px-4 py-2 border">Dearness Allowance (DA)</td></tr>
+      <tr><td class="px-4 py-2 border font-semibold">S</td><td class="px-4 py-2 border">Special Allowance</td></tr>
+      <tr><td class="px-4 py-2 border font-semibold">E</td><td class="px-4 py-2 border">Employee State Insurance (ESI)</td></tr>
+      <tr><td class="px-4 py-2 border font-semibold">H</td><td class="px-4 py-2 border">House Rent Allowance (HRA)</td></tr>
+      <tr><td class="px-4 py-2 border font-semibold">M</td><td class="px-4 py-2 border">Medical Allowance</td></tr>
+      <tr><td class="px-4 py-2 border font-semibold">C</td><td class="px-4 py-2 border">Conveyance Allowance</td></tr>
+      <tr><td class="px-4 py-2 border font-semibold">V</td><td class="px-4 py-2 border">Variable Pay</td></tr>
+    </tbody>
+  </table>
+  <p class="mt-2 text-sm text-black text-center font-bold p-2">
+    <strong>Examples:</strong><br>
+    BDSE = Basic, Dearness Allowance, Special Allowance, ESI<br>
+    BDHMCSV = Basic, DA, HRA, Medical, Conveyance, Special Allowance, Variable Pay
+  </p>
+</div> 
+      <!-- Salary Structure Table BDSE--><
     </thead>
     <tbody>
   <div class="flex flex-col items-center justify-center p-5 py-5 px-5 text-center gap-3" id="Table-BDSE">
