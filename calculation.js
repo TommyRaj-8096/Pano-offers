@@ -1,45 +1,58 @@
- document.addEventListener("DOMContentLoaded", function () {
-    const dropdown = document.getElementById("Break Up");
-    const checkBtn = document.querySelector("button.font-bold.bg-white.w-30"); // This targets the "Check" button
-    const options = [
-      "BDSE", "BDS", "BSE", "BD", "BE", "BDE", "BDHS", "BDHMCS", "BDHMCSV"
-    ];
+document.addEventListener("DOMContentLoaded", function () {
+  const dropdown = document.getElementById("Break Up");
+  const checkBtn = document.querySelector("button.font-bold.bg-white.w-30");
 
-    // Initially hide dropdown and all tables
-    dropdown.parentElement.style.display = "none";
-    options.forEach(val => {
-      const table = document.getElementById(`Table-${val}`);
-      if (table) {
-        table.style.display = "none";
-      }
-    });
+  const options = [
+    "BDSE", "BDS", "BSE", "BD", "BE", "BDE", "BDHS", "BDHMCS", "BDHMCSV"
+  ];
 
-    function hideAllTables() {
-      options.forEach(value => {
-        const table = document.getElementById(`Table-${value}`);
-        if (table) table.style.display = "none";
-      });
-    }
+  const breakdownTable = document.getElementById("Table-Breakdown");
 
-    checkBtn.addEventListener("click", function (event) {
-      event.preventDefault(); // Prevent form submission
-      const confirmAction = confirm("Do you confirm the entered data?");
-      if (confirmAction) {
-        dropdown.parentElement.style.display = "flex"; // Show the dropdown section
-      }
-    });
-
-    dropdown.addEventListener("change", function () {
-      const selected = dropdown.value;
-      hideAllTables();
-      const selectedTable = document.getElementById(`Table-${selected}`);
-      if (selectedTable) {
-        selectedTable.style.display = "flex"; // You can use "block" if needed
-      }
-    });
+  // Initially hide dropdown, all salary tables and breakdown table
+  dropdown.parentElement.style.display = "none";
+  if (breakdownTable) breakdownTable.style.display = "none";
+  options.forEach(val => {
+    const table = document.getElementById(`Table-${val}`);
+    if (table) table.style.display = "none";
   });
 
-  
+  function hideAllTables() {
+    options.forEach(value => {
+      const table = document.getElementById(`Table-${value}`);
+      if (table) table.style.display = "none";
+    });
+  }
+
+ let checkClickedOnce = false;
+
+checkBtn.addEventListener("click", function (event) {
+  event.preventDefault(); // Prevent form submission
+
+  if (!checkClickedOnce) {
+    alert("Please review your entries carefully. Click the Check button again to confirm.");
+    checkClickedOnce = true;
+    return;
+  }
+
+  const confirmAction = confirm("Do you confirm the entered data?");
+  if (confirmAction) {
+    dropdown.parentElement.style.display = "flex"; // Show the dropdown section
+    if (breakdownTable) breakdownTable.style.display = "flex";
+    checkClickedOnce = false; // Reset for future use
+  }
+});
+
+
+  dropdown.addEventListener("change", function () {
+    const selected = dropdown.value;
+    hideAllTables();
+
+    const selectedTable = document.getElementById(`Table-${selected}`);
+    if (selectedTable) {
+      selectedTable.style.display = "flex";
+    }
+  });
+});
 document.addEventListener("DOMContentLoaded", function () {
   function setupField(monthlyId, annualId) {
     const monthlyInput = document.getElementById(monthlyId);
