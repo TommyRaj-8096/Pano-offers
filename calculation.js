@@ -701,19 +701,3 @@ document.querySelector("form").addEventListener("submit", function (e) {
       localStorage.removeItem("isLoggedIn");
       window.location.href = "login.html";
     }
-
-document.querySelector('form').addEventListener('submit', function(e) {
-  e.preventDefault();
-  const formData = new FormData(this);
-  const data = Object.fromEntries(formData);
-
-  fetch('https://n8n.panobizhr.com/webhook/8784cb3e-e216-4feb-93e9-d9ef50497598', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(data)
-  })
-  .then(res => res.ok ? alert('Submitted!') : alert('Error submitting'))
-  .catch(err => alert('Network error: ' + err));
-});
